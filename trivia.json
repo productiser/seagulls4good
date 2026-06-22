@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What are Brighton & Hove Albion FC nicknamed?",
+      "options": ["The Seagulls", "The Dolphins", "The Mods", "The Crabs"],
+      "correct": 0
+    },
+    {
+      "id": "q2",
+      "question": "Brighton beach is made of what instead of sand?",
+      "options": ["Pebbles", "Shells", "Gravel", "Flint"],
+      "correct": 0
+    },
+    {
+      "id": "q3",
+      "question": "What's the name of Brighton's burnt-out, ruined pier?",
+      "options": ["West Pier", "Palace Pier", "Madeira Pier", "Chain Pier"],
+      "correct": 0
+    },
+    {
+      "id": "q4",
+      "question": "Which monarch commissioned the Royal Pavilion?",
+      "options": ["George IV", "Queen Victoria", "Edward VII", "George III"],
+      "correct": 0
+    },
+    {
+      "id": "q5",
+      "question": "Which area of Brighton is famous for its quirky, independent shops?",
+      "options": ["North Laine", "The Lanes", "Kemptown", "Seven Dials"],
+      "correct": 0
+    },
+    {
+      "id": "q6",
+      "question": "Brighton rock is what type of confection?",
+      "options": ["Boiled sugar stick with the town name written all the way through", "A pebble-shaped chocolate", "A sherbet lolly shaped like a seagull", "A Brighton-branded mint humbug"],
+      "correct": 0
+    },
+    {
+      "id": "q7",
+      "question": "ABBA won Eurovision at Brighton in 1974 with which song?",
+      "options": ["Waterloo", "Dancing Queen", "Fernando", "SOS"],
+      "correct": 0
+    },
+    {
+      "id": "q8",
+      "question": "Which Graham Greene novel is set in Brighton's criminal underworld?",
+      "options": ["Brighton Rock", "The Third Man", "The End of the Affair", "Our Man in Havana"],
+      "correct": 0
+    },
+    {
+      "id": "q9",
+      "question": "The world's first electric passenger railway opened in Brighton in which year?",
+      "options": ["1883", "1901", "1869", "1895"],
+      "correct": 0
+    },
+    {
+      "id": "q10",
+      "question": "What is the claim to fame of Brighton Sea Life centre?",
+      "options": ["The world's oldest operating aquarium", "The UK's largest tank", "The only aquarium with seagulls", "The first to breed seahorses"],
+      "correct": 0
+    },
+    {
+      "id": "q11",
+      "question": "An IRA bomb devastated which Brighton building during the 1984 Conservative Party Conference?",
+      "options": ["The Grand Hotel", "The Royal Albion Hotel", "Brighton Pavilion", "The Old Ship Hotel"],
+      "correct": 0
+    },
+    {
+      "id": "q12",
+      "question": "What was Brighton originally called in medieval times?",
+      "options": ["Brighthelmstone", "Brighthelm", "Brightwick", "Brigantum"],
+      "correct": 0
+    },
+    {
+      "id": "q13",
+      "question": "The 1979 film Quadrophenia — about mods fighting rockers — is set in which seaside town?",
+      "options": ["Brighton", "Margate", "Southend", "Bournemouth"],
+      "correct": 0
+    },
+    {
+      "id": "q14",
+      "question": "Who was the architect responsible for the Royal Pavilion's current exotic appearance?",
+      "options": ["John Nash", "Inigo Jones", "Christopher Wren", "Robert Adam"],
+      "correct": 0
+    },
+    {
+      "id": "q15",
+      "question": "What was Brighton & Hove Albion's original ground, which they left in 1997?",
+      "options": ["The Goldstone Ground", "Withdean Stadium", "Falmer Stadium", "The Level Ground"],
+      "correct": 0
+    },
+    {
+      "id": "q16",
+      "question": "The famous 1964 Bank Holiday clashes on Brighton beach were between which two groups?",
+      "options": ["Mods and Rockers", "Punks and Skins", "Teddy Boys and Mods", "Hippies and Rockers"],
+      "correct": 0
+    },
+    {
+      "id": "q17",
+      "question": "Which annual Brighton music festival is famous for breaking new artists?",
+      "options": ["The Great Escape", "Brighton Live", "Sea Sessions", "Seaside Sounds"],
+      "correct": 0
+    },
+    {
+      "id": "q18",
+      "question": "Which area is Brighton's LGBTQ+ village?",
+      "options": ["Kemptown", "North Laine", "Seven Dials", "Hanover"],
+      "correct": 0
+    },
+    {
+      "id": "q19",
+      "question": "Brighton & Hove was granted city status in which year?",
+      "options": ["2000", "1997", "1990", "2010"],
+      "correct": 0
+    },
+    {
+      "id": "q20",
+      "question": "What colours do Brighton & Hove Albion play in?",
+      "options": ["Blue and white stripes", "Red and white", "Yellow and blue", "Green and white"],
+      "correct": 0
+    },
+    {
+      "id": "q21",
+      "question": "Who sponsored Brighton's current stadium, the Amex?",
+      "options": ["American Express", "Barclays", "NatWest", "HSBC"],
+      "correct": 0
+    },
+    {
+      "id": "q22",
+      "question": "In which year did Brighton move into the Amex Stadium?",
+      "options": ["2011", "2007", "2014", "2009"],
+      "correct": 0
+    },
+    {
+      "id": "q23",
+      "question": "After leaving Goldstone Ground, where did Brighton groundshare while waiting for their new stadium?",
+      "options": ["Withdean Stadium", "Fratton Park", "The County Ground", "Selhurst Park"],
+      "correct": 0
+    },
+    {
+      "id": "q24",
+      "question": "Brighton Palace Pier opened in which year?",
+      "options": ["1899", "1884", "1911", "1875"],
+      "correct": 0
+    },
+    {
+      "id": "q25",
+      "question": "What was the Victorian-era Chain Pier primarily used for?",
+      "options": ["Landing passengers from cross-Channel steamboats", "Fishing", "Swimming competitions", "Artillery practice"],
+      "correct": 0
+    },
+    {
+      "id": "q26",
+      "question": "Devil's Dyke, north of Brighton, is best described as what?",
+      "options": ["A dramatic chalk valley with panoramic views", "A medieval moat", "A reservoir", "An Iron Age burial mound"],
+      "correct": 0
+    },
+    {
+      "id": "q27",
+      "question": "Resident Brighton DJ Norman Cook is better known by what stage name?",
+      "options": ["Fatboy Slim", "The Chemical Brothers", "Daft Punk", "Sasha"],
+      "correct": 0
+    },
+    {
+      "id": "q28",
+      "question": "Brighton is sometimes nicknamed what, reflecting its easy rail link?",
+      "options": ["London by the Sea", "The Riviera of England", "The South Coast Capital", "The Party City"],
+      "correct": 0
+    },
+    {
+      "id": "q29",
+      "question": "Which National Park sits on Brighton's doorstep?",
+      "options": ["South Downs", "Surrey Hills", "New Forest", "Kent Downs"],
+      "correct": 0
+    },
+    {
+      "id": "q30",
+      "question": "The Royal Pavilion's architectural style draws inspiration from which country?",
+      "options": ["India", "China", "Morocco", "Egypt"],
+      "correct": 0
+    },
+    {
+      "id": "q31",
+      "question": "Brighton's West Pier suffered catastrophic arson fires in which year?",
+      "options": ["2003", "1998", "2010", "1987"],
+      "correct": 0
+    },
+    {
+      "id": "q32",
+      "question": "Who managed Brighton to their first-ever Premier League season in 2017?",
+      "options": ["Chris Hughton", "Oscar Garcia", "Gus Poyet", "Sami Hyypiä"],
+      "correct": 0
+    },
+    {
+      "id": "q33",
+      "question": "Which acclaimed musician is a long-time Brighton resident?",
+      "options": ["Nick Cave", "Paul McCartney", "Liam Gallagher", "Elton John"],
+      "correct": 0
+    },
+    {
+      "id": "q34",
+      "question": "The Lanes in Brighton are built on the original street plan of which settlement?",
+      "options": ["The medieval fishing village of Brighthelmstone", "A Roman fort", "A Victorian slum", "A Norman castle bailey"],
+      "correct": 0
+    },
+    {
+      "id": "q35",
+      "question": "What does the old Sussex word 'laine' mean — as in North Laine?",
+      "options": ["An open strip of land used for cultivation", "A narrow alley", "A fish market", "A harbour inlet"],
+      "correct": 0
+    },
+    {
+      "id": "q36",
+      "question": "The Royal Pavilion was purchased from the Crown and opened to the public in which year?",
+      "options": ["1850", "1901", "1920", "1876"],
+      "correct": 0
+    },
+    {
+      "id": "q37",
+      "question": "What is Magnus Volk's Railway, which still runs today?",
+      "options": ["The world's first electric passenger railway, running along Brighton seafront", "A vintage steam railway to Devil's Dyke", "A heritage tram through North Laine", "A funicular up to the South Downs"],
+      "correct": 0
+    },
+    {
+      "id": "q38",
+      "question": "Kemp Town, Brighton's grand Regency estate, was developed by whom?",
+      "options": ["Thomas Read Kemp", "Henry Holland", "John Nash", "James Burton"],
+      "correct": 0
+    },
+    {
+      "id": "q39",
+      "question": "Brighton Dome, a major music and arts venue, is located inside which site?",
+      "options": ["The Royal Pavilion grounds", "Preston Park", "The seafront", "Old Steine"],
+      "correct": 0
+    },
+    {
+      "id": "q40",
+      "question": "Brighton's Old Steine was historically used by fishermen for what purpose?",
+      "options": ["Drying nets and gutting fish", "Selling smuggled brandy", "Boat repairs", "Storing ice"],
+      "correct": 0
+    },
+    {
+      "id": "q41",
+      "question": "Approximately how long is a fast direct train journey from Brighton to London Victoria?",
+      "options": ["50–55 minutes", "30–35 minutes", "70–80 minutes", "1h 30m"],
+      "correct": 0
+    },
+    {
+      "id": "q42",
+      "question": "Which famous seaside toy, popular with Victorian holidaymakers, was invented and first manufactured in Brighton?",
+      "options": ["The toy telescope / binoculars (Brighton pier telescope stalls)", "The bucket and spade", "The kite", "The rock candy"],
+      "correct": 0
+    },
+    {
+      "id": "q43",
+      "question": "The Duke of York's Picturehouse in Brighton holds what distinction?",
+      "options": ["One of the oldest continuously operating cinemas in the UK", "The UK's largest independent cinema", "The first cinema to screen talkies in England", "The only cinema inside a listed building"],
+      "correct": 0
+    },
+    {
+      "id": "q44",
+      "question": "Brighton's annual arts festival is one of the largest in England. Which Scottish city hosts the largest?",
+      "options": ["Edinburgh", "Glasgow", "Aberdeen", "Dundee"],
+      "correct": 0
+    },
+    {
+      "id": "q45",
+      "question": "Preston Park is Brighton's largest public park. What is it particularly famous for hosting annually?",
+      "options": ["Brighton Pride — one of the UK's biggest Pride events", "The Brighton Marathon finish", "The Great Escape festival", "A vintage car rally"],
+      "correct": 0
+    },
+    {
+      "id": "q46",
+      "question": "What is the name of the distinctive observation tower that opened on Brighton's seafront in 2016?",
+      "options": ["British Airways i360", "Brighton Eye", "The Brighton Tower", "The Seagull's View"],
+      "correct": 0
+    },
+    {
+      "id": "q47",
+      "question": "Which Hollywood film was partly filmed on Brighton's Palace Pier?",
+      "options": ["Oh! What a Lovely War (1969)", "Brighton Rock (2010)", "Quadrophenia (1979)", "Atonement (2007)"],
+      "correct": 0
+    },
+    {
+      "id": "q48",
+      "question": "The Brighton Fringe is the UK's second-largest arts fringe festival, after which city?",
+      "options": ["Edinburgh", "London", "Bristol", "Manchester"],
+      "correct": 0
+    },
+    {
+      "id": "q49",
+      "question": "Brighton Marina, opened in 1978, was at the time one of the largest in Europe. What sits above it on the cliff?",
+      "options": ["The marina is overlooked by Roedean School", "Black Rock beach huts", "Brighton Race Course", "A Victorian battery fort"],
+      "correct": 0
+    },
+    {
+      "id": "q50",
+      "question": "What is the collective name for the stylish Regency-era seafront terraces in Brighton, inspired by Bath?",
+      "options": ["Regency squares and crescents — including Brunswick Square and Adelaide Crescent", "The Lanes terraces", "Kemptown Villas", "The Royal Crescent"],
+      "correct": 0
+    }
+  ]
+}

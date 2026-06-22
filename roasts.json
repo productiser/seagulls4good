@@ -1,0 +1,23 @@
+{
+  "Mild": [
+    "Close-ish. Your heart's clearly in the right place. So is your home — probably Worthing. Help {charity} and we'll say no more.",
+    "Not quite, but you tried. That's worth something. A donation to {charity} and we'll pretend this didn't happen.",
+    "Wrong — but gently wrong. Like someone who brings the wrong biscuits to a meeting. {charity} needs you regardless.",
+    "Almost. It's giving 'tourist who's read one Wikipedia page'. Go do right by {charity} and we're even."
+  ],
+  "Medium": [
+    "Nul points. My nan knows more about Brighton and she's never left Worthing. You owe {charity} now.",
+    "Swooped, fried, and factually incorrect. Bleak. {charity} it is, then.",
+    "That answer was wrong in a very confident way. Respect the boldness, despise the outcome. {charity} awaits.",
+    "You absolute pigeon. Wrong answer, wrong city energy, wrong everything. {charity} is your only redemption arc.",
+    "The seagulls have conferred. We're disappointed but not surprised. Time to make it right with {charity}.",
+    "That was painful to witness and I am a bird. {charity} is your community service."
+  ],
+  "Spicy": [
+    "That was painful to watch and I'm a bird. Go grovel to {charity} before I tell the flock.",
+    "Wrong, and confidently so. Classic day-tripper energy. {charity}'s your community service — start now.",
+    "Absolutely not. That answer was wrong in three different ways and I'm still processing it. {charity}. Now. Go.",
+    "I've seen chips get stolen more gracefully than that answer was given. {charity} needs you more than you deserve them.",
+    "You answered that like someone who Googled Brighton on the way here. {charity} will take your guilt money. Off you go."
+  ]
+}
