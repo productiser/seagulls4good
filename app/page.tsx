@@ -286,7 +286,9 @@ export default function GamePage() {
               </button>
 
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '14px' }}>
-                <span style={{ fontSize: '12.5px', color: '#7c8a92', fontWeight: 600 }}>Two questions · one seagull · no chips.</span>
+                <button onClick={() => router.push('/about')} style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '12.5px', fontWeight: 600, color: '#7c8a92', textDecoration: 'underline', padding: 0 }}>
+                  Built by Pankstr 🪶
+                </button>
                 <button onClick={() => router.push('/board')} style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '13px', fontWeight: 700, color: '#3E94BD', textDecoration: 'underline', padding: 0 }}>
                   Peek the board →
                 </button>
