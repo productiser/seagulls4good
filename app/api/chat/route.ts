@@ -11,10 +11,11 @@ Rules:
 - Do not use quotation marks in your response.
 - Do not say "I am" or introduce yourself.
 - Reference Brighton, the seafront, or the charity naturally where it fits.
-- Be dry and slightly superior but ultimately on the user's side.`;
+- Be dry and slightly superior but ultimately on the user's side.
+- Never use *asterisks* for actions or stage directions. No *swoops*, no *caws*, nothing like that. Just plain speech.`;
 
 const FALLBACKS: Record<string, string> = {
-  intro: `Oi. Up here. Yeah — me. The seagull. Caw.\nI've packed in the chip-nicking. I work for {charityName} now. Long, tragic story.\nTwo questions, {name}. Both right, you're a {charityName} Voice. One wrong… you owe us. Ready? Course you are.`,
+  intro: `I've packed in the chip-nicking. I work for {charityName} now — long, tragic story.\nTwo questions, {name}. Both right, you're a {charityName} Voice. One wrong… you owe us.`,
   'react-correct': 'Bang on.',
   'react-wrong': 'Wrong. Boldly so.',
   'finish-win': `Two from two. You're revoltingly Brighton. Certified. Get over here.`,
@@ -36,7 +37,7 @@ export async function POST(req: Request) {
 
   let userPrompt = '';
   if (phase === 'intro') {
-    userPrompt = `Greet ${name} with exactly 3 short lines (separated by newlines, no blank lines between them). Cover: (1) a dramatic seagull entrance, (2) mention you work for ${charity.charityName} now and gave up chips, (3) lay out the challenge: two trivia questions, both right = they're a ${charity.charityName} Voice, any wrong = they owe the flock. Go.`;
+    userPrompt = `Greet ${name} with exactly 2 short lines (separated by a newline, no blank line between them). Line 1: mention you work for ${charity.charityName} now, gave up chips. Line 2: lay out the challenge — two Brighton trivia questions, both right = ${charity.charityName} Voice, any wrong = they owe the flock. Keep it punchy. No stage directions.`;
   } else if (phase === 'react-correct') {
     userPrompt = `${name} correctly answered the question "${question}" with "${answer}". Give a brief dry reaction — reluctant to admit they got it right. 1 sentence max.`;
   } else if (phase === 'react-wrong') {
@@ -54,7 +55,8 @@ export async function POST(req: Request) {
       system,
       messages: [{ role: 'user', content: userPrompt }],
     });
-    const text = response.content[0].type === 'text' ? response.content[0].text.trim() : 'Caw.';
+    const raw = response.content[0].type === 'text' ? response.content[0].text.trim() : 'Caw.';
+    const text = raw.replace(/\*[^*]*\*/g, '').replace(/\s{2,}/g, ' ').trim();
     return Response.json({ text });
   } catch {
     const fallback = interp(FALLBACKS[phase] || 'Caw.', name, charity.charityName);

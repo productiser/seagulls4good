@@ -89,7 +89,7 @@ export default function GamePage() {
   };
 
   const handleAnswer = async (opt: ShuffledOpt) => {
-    if (!pending || !gameActive.current) return;
+    if (!pending) return;
     setPending(null);
     const isCorrect = opt.isCorrect;
     resultsRef.current.push(isCorrect);
