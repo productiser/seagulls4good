@@ -78,7 +78,6 @@ export default function GamePage() {
   };
 
   const setPendingQ = (p: PendingQ | null) => {
-    console.log('[setPendingQ]', p ? `slot ${p.slot}` : 'null');
     pendingRef.current = p;
     setPending(p);
   };
@@ -96,13 +95,11 @@ export default function GamePage() {
   };
 
   const handleAnswer = async (opt: ShuffledOpt) => {
-    console.log('[handleAnswer] called', { opt, pendingRef: pendingRef.current, resultsLen: resultsRef.current.length });
     const p = pendingRef.current;
-    if (!p) { console.warn('[handleAnswer] no pending — bailing'); return; }
+    if (!p) return;
     setPendingQ(null);
     const isCorrect = opt.isCorrect;
     resultsRef.current.push(isCorrect);
-    console.log('[handleAnswer] slot', p.slot, 'correct?', isCorrect, 'results so far', resultsRef.current);
     const q = questionsRef.current[p.slot];
 
     addMessage('user', opt.text);
@@ -117,12 +114,9 @@ export default function GamePage() {
     setTyping(false);
     await say(reaction);
 
-    console.log('[handleAnswer] results length', resultsRef.current.length);
     if (resultsRef.current.length < 2) {
-      console.log('[handleAnswer] asking Q2');
       await askQuestion(resultsRef.current.length);
     } else {
-      console.log('[handleAnswer] finishing game');
       const allCorrect = resultsRef.current.every(Boolean);
       setTyping(true);
       const finishText = await fetchSeagull(allCorrect ? 'finish-win' : 'finish-lose', { allCorrect });
