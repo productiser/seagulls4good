@@ -39,6 +39,7 @@ export default function GamePage() {
   const [pledged, setPledged] = useState(false);
   const [shared, setShared] = useState(false);
   const [readyCTA, setReadyCTA] = useState(false);
+  const [chatError, setChatError] = useState(false);
 
   // Refs for async game flow (avoids stale closures)
   const nameRef = useRef('');
@@ -58,17 +59,27 @@ export default function GamePage() {
     setMessages(prev => [...prev, { id: crypto.randomUUID(), role, text }]);
   }, []);
 
-  const fetchSeagull = async (phase: string, extra?: Record<string, unknown>): Promise<string> => {
+  const SEAGULL_ERRORS = [
+    "The wifi's gone. Even seagulls have off days. Try again.",
+    "Signal dropped off the pier. Refresh and we'll pretend this never happened.",
+    "Something went wrong on my end. Blame the gulls, not the internet.",
+  ];
+
+  const fetchSeagull = async (phase: string, extra?: Record<string, unknown>): Promise<string | null> => {
     try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 12000);
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ phase, name: nameRef.current, ...extra }),
+        signal: controller.signal,
       });
+      clearTimeout(timeout);
       const data = await res.json();
       return (data.text || 'Caw.').trim();
     } catch {
-      return 'Caw.';
+      return null;
     }
   };
 
@@ -112,6 +123,8 @@ export default function GamePage() {
       correctAnswer: q.options[q.correct],
     });
     setTyping(false);
+
+    if (reaction === null) { setChatError(true); return; }
     await say(reaction);
 
     if (resultsRef.current.length < 2) {
@@ -121,6 +134,7 @@ export default function GamePage() {
       setTyping(true);
       const finishText = await fetchSeagull(allCorrect ? 'finish-win' : 'finish-lose', { allCorrect });
       setTyping(false);
+      if (finishText === null) { setChatError(true); return; }
       await say(finishText);
       setRoastLine(finishText);
       setOutcomeType(allCorrect ? 'voice' : 'action');
@@ -147,11 +161,13 @@ export default function GamePage() {
     setReadyCTA(false);
     setPledged(false);
     setShared(false);
+    setChatError(false);
 
     setTyping(true);
     const introText = await fetchSeagull('intro');
     setTyping(false);
 
+    if (introText === null) { setChatError(true); return; }
     const lines = introText.split('\n').filter((l: string) => l.trim());
     for (const line of lines) {
       await say(line);
@@ -352,6 +368,19 @@ export default function GamePage() {
                 {!pending && !readyCTA && typing && (
                   <div style={{ textAlign: 'center', fontSize: '12.5px', color: '#9aa9b0', fontWeight: 600, padding: '4px' }}>
                     The seagull is composing its next insult…
+                  </div>
+                )}
+                {chatError && (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    <div style={{ textAlign: 'center', fontSize: '14px', color: '#C8472F', fontWeight: 600, padding: '8px 4px', lineHeight: 1.4 }}>
+                      {SEAGULL_ERRORS[Math.floor(Math.random() * SEAGULL_ERRORS.length)]}
+                    </div>
+                    <button
+                      onClick={() => { setChatError(false); restart(); }}
+                      style={{ width: '100%', padding: '13px', fontFamily: "'Anton', sans-serif", textTransform: 'uppercase', letterSpacing: '.04em', fontSize: '14px', background: '#20323E', color: '#F3E6C6', border: '2.5px solid #20323E', borderRadius: '13px', cursor: 'pointer', boxShadow: '3px 3px 0 rgba(32,50,62,.3)' }}
+                    >
+                      Start over →
+                    </button>
                   </div>
                 )}
               </div>
