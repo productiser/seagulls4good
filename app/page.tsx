@@ -47,6 +47,7 @@ export default function GamePage() {
   const resultsRef = useRef<boolean[]>([]);
   const chatRef = useRef<HTMLDivElement>(null);
   const gameActive = useRef(false);
+  const pendingRef = useRef<PendingQ | null>(null);
 
   // Auto-scroll chat
   useEffect(() => {
@@ -76,6 +77,11 @@ export default function GamePage() {
     await sleep(300);
   };
 
+  const setPendingQ = (p: PendingQ | null) => {
+    pendingRef.current = p;
+    setPending(p);
+  };
+
   const askQuestion = async (slot: number) => {
     const q = questionsRef.current[slot];
     if (!q) return;
@@ -85,15 +91,16 @@ export default function GamePage() {
       [opts[i], opts[j]] = [opts[j], opts[i]];
     }
     await say(`Q${slot + 1}. ${q.question}`);
-    setPending({ slot, question: q.question, shuffled: opts });
+    setPendingQ({ slot, question: q.question, shuffled: opts });
   };
 
   const handleAnswer = async (opt: ShuffledOpt) => {
-    if (!pending) return;
-    setPending(null);
+    const p = pendingRef.current;
+    if (!p) return;
+    setPendingQ(null);
     const isCorrect = opt.isCorrect;
     resultsRef.current.push(isCorrect);
-    const q = questionsRef.current[pending.slot];
+    const q = questionsRef.current[p.slot];
 
     addMessage('user', opt.text);
     await sleep(300);
@@ -134,7 +141,7 @@ export default function GamePage() {
 
     setScreen('chat');
     setMessages([]);
-    setPending(null);
+    setPendingQ(null);
     setOutcomeType(null);
     setRoastLine('');
     setReadyCTA(false);
@@ -192,7 +199,7 @@ export default function GamePage() {
     gameActive.current = false;
     setScreen('landing');
     setMessages([]);
-    setPending(null);
+    setPendingQ(null);
     setOutcomeType(null);
     setReadyCTA(false);
     setPledged(false);
