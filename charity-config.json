@@ -1,11 +1,11 @@
 {
-  "charityName": "Brighton Food Bank",
-  "charityBlurb": "Brighton Food Bank provides emergency food and support to people in crisis across the city. Every donation keeps a local family fed.",
-  "charityTagline": "Feed Brighton. Keep it local.",
-  "charityAccent": "#2F9E6B",
+  "charityName": "Over the Moon",
+  "charityBlurb": "Over the Moon runs The Scrap Space — a creative reuse hub where donated materials get a second life. They just opened their Brighton branch in September 2025. Help spread the word.",
+  "charityTagline": "Creativity, sustainability and community along the Sussex coast.",
+  "charityAccent": "#E8520A",
   "actions": [
-    "Donate a fiver — that's one less pint",
-    "Volunteer a Saturday morning",
-    "Share this & tag three mates who owe the gulls"
+    "Visit The Scrap Space at Community Base, Brighton",
+    "Donate craft materials to their Brighton branch this week",
+    "Tell three Brighton people the Scrap Space exists — go on"
   ]
 }
