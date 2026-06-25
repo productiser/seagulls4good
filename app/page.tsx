@@ -245,6 +245,10 @@ export default function GamePage() {
                 <span style={{ fontFamily: "'Anton', sans-serif", textTransform: 'uppercase', letterSpacing: '.12em', fontSize: '12px', color: '#3E94BD' }}>Brighton Seagulls</span>
                 <span style={{ fontFamily: "'Caveat', cursive", fontSize: '24px', color: '#C8472F', transform: 'rotate(-6deg)', display: 'inline-block' }}>for good</span>
               </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '10px' }}>
+                <span style={{ fontFamily: "'Anton', sans-serif", textTransform: 'uppercase', letterSpacing: '.08em', fontSize: '10px', color: '#7c8a92' }}>Swooping for</span>
+                <img src="/otm-logo.avif" alt="Over the Moon" style={{ height: '32px', width: 'auto', objectFit: 'contain' }} />
+              </div>
 
               <div style={{ marginTop: '34px' }}>
                 <div style={{ fontFamily: "'Alfa Slab One', serif", fontSize: '54px', lineHeight: '.92', color: '#20323E', textShadow: '3px 3px 0 #bfe0ec' }}>GET<br />SWOOPED.</div>
