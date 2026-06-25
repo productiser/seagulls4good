@@ -2,6 +2,7 @@ import { getLeads } from '../../lib/storage';
 import { Lead } from '../../lib/types';
 import charityConfig from '../../charity-config.json';
 import Link from 'next/link';
+import LeadsButton from './LeadsButton';
 
 function timeago(ts: string) {
   const m = Math.max(0, Math.round((Date.now() - new Date(ts).getTime()) / 60000));
@@ -84,6 +85,9 @@ export default async function BoardPage() {
             <Link href="/" style={{ display: 'block', width: '100%', padding: '14px', fontFamily: "'Anton', sans-serif", letterSpacing: '.04em', textTransform: 'uppercase', fontSize: '15px', background: '#C8472F', color: '#fff', border: '2.5px solid #20323E', borderRadius: '13px', cursor: 'pointer', boxShadow: '3px 3px 0 #20323E', textAlign: 'center', textDecoration: 'none' }}>
               Get Swooped →
             </Link>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
+              <LeadsButton />
+            </div>
           </div>
 
         </div>

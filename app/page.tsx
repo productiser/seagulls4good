@@ -247,7 +247,7 @@ export default function GamePage() {
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '10px' }}>
                 <span style={{ fontFamily: "'Anton', sans-serif", textTransform: 'uppercase', letterSpacing: '.08em', fontSize: '10px', color: '#7c8a92' }}>Swooping for</span>
-                <img src="/otm-logo.avif" alt="Over the Moon" style={{ height: '32px', width: 'auto', objectFit: 'contain' }} />
+                <a href="https://www.weareoverthemoon.org" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Alfa Slab One', serif", fontSize: '15px', color: charity.charityAccent, textDecoration: 'none', letterSpacing: '.02em', lineHeight: 1 }}>Over the Moon</a>
               </div>
 
               <div style={{ marginTop: '34px' }}>
