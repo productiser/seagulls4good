@@ -38,6 +38,7 @@ export default function GamePage() {
   const [assignedAction, setAssignedAction] = useState(charity.actions[0]);
   const [pledged, setPledged] = useState(false);
   const [shared, setShared] = useState(false);
+  const [volunteerDate, setVolunteerDate] = useState('');
   const [readyCTA, setReadyCTA] = useState(false);
   const [chatError, setChatError] = useState(false);
 
@@ -161,6 +162,7 @@ export default function GamePage() {
     setReadyCTA(false);
     setPledged(false);
     setShared(false);
+    setVolunteerDate('');
     setChatError(false);
 
     setTyping(true);
@@ -189,12 +191,25 @@ export default function GamePage() {
     setScreen('outcome');
   };
 
+  const isVolunteerAction = (charity as { volunteerActionIndex?: number }).volunteerActionIndex !== undefined
+    && assignedAction === charity.actions[(charity as { volunteerActionIndex: number }).volunteerActionIndex];
+  const canPledge = !pledged && (!isVolunteerAction || !!volunteerDate);
+
+  const formatVolunteerDate = (d: string) => {
+    if (!d) return '';
+    const dt = new Date(d + 'T12:00:00');
+    return dt.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+  };
+
   const pledge = () => {
-    if (pledged) return;
+    if (!canPledge) return;
+    const action = isVolunteerAction && volunteerDate
+      ? `${assignedAction} on ${formatVolunteerDate(volunteerDate)}`
+      : assignedAction;
     fetch('/api/lead', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: nameRef.current, email: emailRef.current, outcome_type: 'action', action: assignedAction }),
+      body: JSON.stringify({ name: nameRef.current, email: emailRef.current, outcome_type: 'action', action }),
     }).catch(() => {});
     setPledged(true);
   };
@@ -433,16 +448,27 @@ export default function GamePage() {
               <div style={{ marginTop: '24px' }}>
                 <div style={{ fontFamily: "'Anton', sans-serif", textTransform: 'uppercase', letterSpacing: '.1em', fontSize: '12px', color: charity.charityAccent }}>⚡ Your assignment</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '9px', marginTop: '10px' }}>
-                  {charity.actions.map(a => {
+                  {charity.actions.map((a, idx) => {
                     const active = a === assignedAction;
+                    const isVolunteer = idx === (charity as { volunteerActionIndex?: number }).volunteerActionIndex;
                     return (
-                      <button
-                        key={a}
-                        onClick={() => { setAssignedAction(a); setPledged(false); }}
-                        style={{ textAlign: 'left', padding: '13px 15px', fontSize: '14.5px', fontWeight: 700, fontFamily: "'Hanken Grotesk', sans-serif", borderRadius: '13px', cursor: 'pointer', background: active ? '#eafaf2' : '#FFFDF7', color: '#20323E', border: `2.5px solid ${active ? charity.charityAccent : '#cdd6d1'}`, boxShadow: active ? `2px 2px 0 ${charity.charityAccent}` : 'none' }}
-                      >
-                        {a}
-                      </button>
+                      <div key={a}>
+                        <button
+                          onClick={() => { setAssignedAction(a); setPledged(false); setVolunteerDate(''); }}
+                          style={{ width: '100%', textAlign: 'left', padding: '13px 15px', fontSize: '14.5px', fontWeight: 700, fontFamily: "'Hanken Grotesk', sans-serif", borderRadius: '13px', cursor: 'pointer', background: active ? '#eafaf2' : '#FFFDF7', color: '#20323E', border: `2.5px solid ${active ? charity.charityAccent : '#cdd6d1'}`, boxShadow: active ? `2px 2px 0 ${charity.charityAccent}` : 'none' }}
+                        >
+                          {a}
+                        </button>
+                        {active && isVolunteer && (
+                          <input
+                            type="date"
+                            min={new Date().toISOString().split('T')[0]}
+                            value={volunteerDate}
+                            onChange={e => setVolunteerDate(e.target.value)}
+                            style={{ marginTop: '7px', width: '100%', padding: '11px 13px', fontSize: '15px', fontFamily: "'Hanken Grotesk', sans-serif", border: `2.5px solid ${volunteerDate ? charity.charityAccent : '#C8472F'}`, borderRadius: '11px', outline: 'none', color: '#20323E', background: '#fff', boxSizing: 'border-box' }}
+                          />
+                        )}
+                      </div>
                     );
                   })}
                 </div>
@@ -451,9 +477,10 @@ export default function GamePage() {
               <div style={{ marginTop: 'auto', paddingTop: '20px' }}>
                 <button
                   onClick={pledge}
-                  style={{ width: '100%', padding: '15px', fontFamily: "'Anton', sans-serif", textTransform: 'uppercase', letterSpacing: '.04em', fontSize: '16px', borderRadius: '13px', cursor: 'pointer', border: '2.5px solid #20323E', boxShadow: '3px 3px 0 #20323E', background: pledged ? charity.charityAccent : '#20323E', color: '#fff' }}
+                  disabled={!canPledge}
+                  style={{ width: '100%', padding: '15px', fontFamily: "'Anton', sans-serif", textTransform: 'uppercase', letterSpacing: '.04em', fontSize: '16px', borderRadius: '13px', cursor: canPledge ? 'pointer' : 'not-allowed', border: '2.5px solid #20323E', boxShadow: canPledge ? '3px 3px 0 #20323E' : 'none', background: pledged ? charity.charityAccent : canPledge ? '#20323E' : '#d8cdb4', color: canPledge ? '#fff' : '#9a8f76' }}
                 >
-                  {pledged ? "Pledged ✓ — you're on the board" : "I'm in — pledge it"}
+                  {pledged ? "Pledged ✓ — you're on the board" : isVolunteerAction && !volunteerDate ? 'Pick a date first' : "I'm in — pledge it"}
                 </button>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '13px' }}>
                   <button onClick={restart} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '13px', fontWeight: 700, color: '#7c8a92', textDecoration: 'underline' }}>Try again</button>

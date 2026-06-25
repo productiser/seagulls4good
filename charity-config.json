@@ -4,8 +4,9 @@
   "charityTagline": "Creativity, sustainability and community along the Sussex coast.",
   "charityAccent": "#E8520A",
   "actions": [
-    "Visit The Scrap Space at Community Base, Brighton",
-    "Donate craft materials to their Brighton branch this week",
-    "Tell three Brighton people the Scrap Space exists — go on"
-  ]
+    "Collect materials and drop them to The Scrap Space, Brighton",
+    "Donate craft materials to The Scrap Space, Brighton",
+    "Volunteer with Over the Moon"
+  ],
+  "volunteerActionIndex": 2
 }
